@@ -1,0 +1,6 @@
+raise 'need args for something to time' unless ARGV[0]
+start = Time.now
+c = ARGV.shift + " " + ARGV.map{|a| a.include?(' ') ? '"' + a + '"' : a}.join(" ")
+puts c
+system(c)
+puts Time.now - start
